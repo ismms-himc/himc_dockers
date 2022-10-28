@@ -1,0 +1,5 @@
+docker build .
+docker build -t dsouzd04/himc_spotlight .
+docker run -it dsouzd04/himc_spotlight R -e 'library(SPOTlight); sessionInfo()'
+docker tag dsouzd04/himc_spotlight dsouzd04/himc_spotlight:1.0.0
+docker push dsouzd04/himc_spotlight:1.0.0

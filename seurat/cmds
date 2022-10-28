@@ -1,0 +1,5 @@
+docker build .
+docker build -t dsouzd04/seurat .
+docker run -it dsouzd04/seurat R -e "library(Seurat); library(SeuratDisk)" # test
+docker tag dsouzd04/seurat dsouzd04/seurat:4.2.1
+docker push dsouzd04/seurat:4.2.1
