@@ -4,7 +4,7 @@ Docker builds for all tools used by HIMC
 # To use on Minerva
 `ml singularity`
 
-`singularity pull dsouzd04/himc_seurat`
+`singularity pull docker://dsouzd04/himc_seurat`
 
 `singularity shell himc_seurat.sif # go inside container`
 
