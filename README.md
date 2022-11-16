@@ -1,5 +1,6 @@
 # himc_dockers
-Docker builds for all tools used by HIMC
+Docker builds for all tools used by HIMC. Base build contains R version 4.2.1,
+Seurat and Seurat Disk
 
 # To use on Minerva
 `ml singularity`
@@ -34,7 +35,9 @@ Docker builds for all tools used by HIMC
 
 [Homepage](https://github.com/YingMa0107/CARD)
 
+## Giotto v1.1.2
+[Docker](https://hub.docker.com/repository/docker/dsouzd04/himc_giotto)
 
-
+[Homepage](https://giottosuite.readthedocs.io/en/master/index.html)
 
 

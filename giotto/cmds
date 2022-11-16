@@ -1,0 +1,8 @@
+docker pull delron01/giotto:latest
+docker run -it delron01/giotto:latest R -e 'library(Giotto); sessionInfo()'
+
+docker build . > build.log 2>&1
+docker build -t dsouzd04/himc_giotto .
+docker run -it dsouzd04/himc_giotto R -e 'library(Giotto); sessionInfo()'
+docker tag dsouzd04/himc_giotto dsouzd04/himc_giotto:1.1.2
+docker push dsouzd04/himc_giotto:1.1.2
