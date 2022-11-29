@@ -1,0 +1,11 @@
+# start docker daemon
+sudo dockerd
+
+# to stop ps aux | grep docker and kill
+sudo rm /var/run/docker.pid
+ps axf | grep docker | grep -v grep | awk '{print "kill -9 " $1}' | sudo sh
+
+# build
+docker build -t rpy2/jupyter_ds-ubuntu:master-default .
+docker tag rpy2/jupyter_ds-ubuntu:master-default dsouzd04/rpy2_singlecell:latest
+docker push dsouzd04/rpy2_singlecell:latest

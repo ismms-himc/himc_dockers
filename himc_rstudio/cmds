@@ -1,0 +1,4 @@
+docker build -t dsouzd04/himc_rstudio .
+docker run -it dsouzd04/himc_rstudio R -e "library(Seurat); library(SeuratDisk)" # test
+docker tag dsouzd04/himc_rstudio dsouzd04/himc_rstudio:4.2.1
+docker push dsouzd04/himc_rstudio:4.2.1
