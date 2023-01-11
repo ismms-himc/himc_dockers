@@ -1,0 +1,13 @@
+#version 0.0.2a
+docker build .
+docker build -t dsouzd04/stride .
+docker run -it dsouzd04/stride STRIDE --help
+docker tag dsouzd04/stride dsouzd04/himc_stride:0.0.2a
+docker push dsouzd04/himc_stride:0.0.2a
+
+#version 0.0.2b
+docker build .
+docker build -t dsouzd04/stride .
+docker run -it dsouzd04/stride STRIDE --help
+docker tag dsouzd04/stride dsouzd04/himc_stride:0.0.2b
+docker push dsouzd04/himc_stride:0.0.2b

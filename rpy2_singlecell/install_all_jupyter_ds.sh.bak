@@ -30,22 +30,17 @@ BUILDDEPS="${BUILDDEPS} \
     llvm-10 \
     cmake"
 
-#APACHEARROW_URL="https://dl.bintray.com/apache/arrow/$(lsb_release --codename --short | tr 'A-Z' 'a-z')"
-#APACHEARROW_URL="https://apache.jfrog.io/artifactory/arrow/$(lsb_release --codename --short | tr 'A-Z' 'a-z')"
-#wget -O /usr/share/keyrings/apache-arrow-keyring.gpg \
-#     ${APACHEARROW_URL}/apache-arrow-keyring.gpg
-#tee /etc/apt/sources.list.d/apache-arrow.list <<APT_LINE
-#deb [arch=amd64 signed-by=/usr/share/keyrings/apache-arrow-keyring.gpg] ${APACHEARROW_URL}/ $(lsb_release --codename --short) main
-#deb-src [signed-by=/usr/share/keyrings/apache-arrow-keyring.gpg] ${APACHEARROW_URL}/ $(lsb_release --codename --short) main
-#APT_LINE
-#  apt-get update -qq
-apt update -qq && \
-apt install -y -V ca-certificates lsb-release && \
-wget https://apache.jfrog.io/artifactory/arrow/$(lsb_release --id --short | tr 'A-Z' 'a-z')/apache-arrow-apt-source-latest-$(lsb_release --codename --short).deb && \
-apt install -y -V ./apache-arrow-apt-source-latest-$(lsb_release --codename --short).deb
+APACHEARROW_URL="https://dl.bintray.com/apache/arrow/$(lsb_release --codename --short | tr 'A-Z' 'a-z')"
+wget -O /usr/share/keyrings/apache-arrow-keyring.gpg \
+     ${APACHEARROW_URL}/apache-arrow-keyring.gpg
+tee /etc/apt/sources.list.d/apache-arrow.list <<APT_LINE
+deb [arch=amd64 signed-by=/usr/share/keyrings/apache-arrow-keyring.gpg] ${APACHEARROW_URL}/i $(lsb_release --codename --short) main
+deb-src [signed-by=/usr/share/keyrings/apache-arrow-keyring.gpg] ${APACHEARROW_URL}/ $(lsb_release --codename --short) main
+APT_LINE
+  apt-get update -qq
 
 curl https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
-  echo "deb http://apt.llvm.org/$(lsb_release --codename --short)/ llvm-toolchain-$(lsb_release --codename --short) main" > \
+  echo "deb http://apt.llvm.org/$(lsb_release --codename --short)/ llvm-toolchain-$(lsb_release --codename --short)-7 main" > \
   /etc/apt/sources.list.d/llvm.list && \
   apt-get update --quiet
 

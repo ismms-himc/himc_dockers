@@ -1,3 +1,4 @@
 docker build -t dsoud04/himc_rctd .
 docker tag dsoud04/himc_rctd:2.0.3 dsouzd04/himc_rctd:2.0.3
+docker run -it dsouzd04/himc_rctd:2.0.3 R -e 'library(spacexr); sessionInfo()'
 docker push dsouzd04/himc_rctd:2.0.3

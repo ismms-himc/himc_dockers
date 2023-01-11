@@ -1,0 +1,11 @@
+FROM dsouzd04/himc_rpy2_singlecell:latest
+USER 0
+RUN apt-get update
+RUN apt-get install -y \
+  git
+
+RUN \
+  git clone https://github.com/DongqingSun96/STRIDE.git && \
+  cd STRIDE && \
+  pip install -r requirements.txt && \
+  python3 setup.py install

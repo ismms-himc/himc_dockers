@@ -1,0 +1,4 @@
+docker build -t dsouzd04/himc_spatialdecon .
+docker run -it dsouzd04/himc_spatialdecon:latest R -e 'library(GeomxTools); sessionInfo()'
+docker tag dsouzd04/himc_spatialdecon:latest dsouzd04/himc_spatialdecon:1.6.0
+docker push dsouzd04/himc_spatialdecon:1.6.0

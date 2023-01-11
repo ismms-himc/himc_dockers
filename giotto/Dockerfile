@@ -17,3 +17,8 @@ RUN Rscript -e "install.packages('remotes')" \
 RUN R -e 'BiocManager::install(c("TENxVisiumData", "TabulaMurisSenisData"))' \
     && rm -rf /tmp/downloaded_packages/
 
+RUN R -e 'BiocManager::install(c("scran", "scuttle"))' \
+    && rm -rf /tmp/downloaded_packages/
+
+RUN R -e 'BiocManager::install(c("quadprog"))' \
+    && rm -rf /tmp/downloaded_packages/
