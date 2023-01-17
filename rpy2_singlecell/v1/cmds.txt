@@ -1,0 +1,21 @@
+ start docker daemon
+sudo dockerd
+
+# to stop ps aux | grep docker and kill
+sudo rm /var/run/docker.pid
+ps axf | grep docker | grep -v grep | awk '{print "kill -9 " $1}' | sudo sh
+
+# build
+#docker build -t rpy2/jupyter_ds-ubuntu:master-default .
+docker build --no-cache -t rpy2/jupyter_ds-ubuntu:master-default . 2>&1 | tee docker_build.err
+docker run -it rpy2/jupyter_ds-ubuntu:master-default R -e 'library(MAST); sessionInfo()'
+docker run -it rpy2/jupyter_ds-ubuntu:master-default /bin/bash
+docker tag rpy2/jupyter_ds-ubuntu:master-default dsouzd04/himc_rpy2_singlecell:latest
+docker push dsouzd04/himc_rpy2_singlecell:latest
+
+#tag latest as 1.0
+docker tag dsouzd04/himc_rpy2_singlecell:latest dsouzd04/himc_rpy2_singlecell:1.0
+docker push dsouzd04/himc_rpy2_singlecell:1.0
+
+# build v2.0 (decoupleR)
+docker build -t dsouzd04/himc_rpy2_singlecell:2.0 .
