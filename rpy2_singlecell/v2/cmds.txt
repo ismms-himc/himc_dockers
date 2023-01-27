@@ -1,4 +1,5 @@
 # build v2.0 (decoupler)
 docker build -t dsouzd04/himc_rpy2_singlecell:2.0 .
-docker run -it dsouzd04/himc_rpy2_singlecell:2.0 python -c 'import decoupler as dc'
+docker run -it dsouzd04/himc_rpy2_singlecell:2.0 python3 -c 'import decoupler as dc'
+docker run -it dsouzd04/himc_rpy2_singlecell:2.0 R -e 'library(SeuratDisk); library(Seurat)'
 docker push dsouzd04/himc_rpy2_singlecell:2.0

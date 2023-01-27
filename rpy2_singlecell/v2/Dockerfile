@@ -6,6 +6,13 @@ RUN \
   python3 -m pip install \
   decoupler
 
+USER root 
+
+RUN cp /usr/local/lib/R/site-library/hdf5r/libs/hdf5r.so /usr/lib/R/lib/
+
+RUN apt update
+RUN apt-get install -y libhdf5-dev
+
 WORKDIR /home/"${NB_USER}"
 
 USER $NB_USER
