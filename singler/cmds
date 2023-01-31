@@ -1,0 +1,4 @@
+docker build -t dsouzd04/himc_singler .
+docker run -it dsouzd04/himc_singler:latest R -e 'library(SingleR); sessionInfo()'
+docker tag dsouzd04/himc_singler:latest dsouzd04/himc_singler:1.10.0
+docker push dsouzd04/himc_singler:1.10.0

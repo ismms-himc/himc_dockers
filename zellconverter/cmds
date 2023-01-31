@@ -1,0 +1,4 @@
+docker build -t dsouzd04/zellkonverter .
+docker run -it dsouzd04/zellkonverter R -e 'library(zellkonverter); example_h5ad <- system.file("extdata", "krumsiek11.h5ad", package = "zellkonverter"); readH5AD(example_h5ad); sessionInfo()'
+docker tag dsouzd04/zellkonverter:latest dsouzd04/himc_zellkonverter:1.6.5
+docker push dsouzd04/himc_zellkonverter:1.6.5

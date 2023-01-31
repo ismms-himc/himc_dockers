@@ -1,0 +1,4 @@
+docker build -t dsouzd04/himc_cell2location .
+docker run -it -p 8888:8888 dsouzd04/himc_cell2location pip freeze | grep cell2location
+docker build -t dsouzd04/himc_cell2location:0.1.2 .
+docker push dsouzd04/himc_cell2location:0.1.2
