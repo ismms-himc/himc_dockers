@@ -1,0 +1,5 @@
+docker build -t dsouzd04/himc_cytof .
+docker run -it dsouzd04/himc_cytof python3 -c 'import FlowCal; import fcsy'
+docker tag dsouzd04/himc_cytof:latest dsouzd04/himc_cytof:1.0
+docker run --rm -it --entrypoint bash dsouzd04/himc_cytof:1.0
+docker push dsouzd04/himc_cytof:1.0

@@ -7,3 +7,4 @@ RUN apt-get install -y \
 RUN R -e 'BiocManager::install("SPOTlight")'
 RUN R -e 'BiocManager::install(c("TENxVisiumData", "TabulaMurisSenisData"))'
 RUN R -e 'BiocManager::install(c("SpatialExperiment", "scater", "scran"))'
+RUN R -e 'install.packages("ggcorrplot")'

@@ -1,0 +1,188 @@
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 3.25kB done
+#2 DONE 0.1s
+
+#3 [internal] load metadata for docker.io/jupyter/datascience-notebook:latest
+#3 DONE 0.0s
+
+#4 [ 1/20] FROM docker.io/jupyter/datascience-notebook:latest
+#4 DONE 0.0s
+
+#5 [13/20] RUN R --no-echo --no-restore --no-save -e "install.packages('hdf5r',repos='http://cran.rstudio.com/')"
+#5 CACHED
+
+#6 [ 3/20] RUN apt-get update
+#6 CACHED
+
+#7 [ 5/20] RUN R -e 'install.packages("languageserver", repos="http://cran.rstudio.com/")'
+#7 CACHED
+
+#8 [11/20] RUN R --no-echo --no-restore --no-save -e   "BiocManager::install(c('multtest', 'S4Vectors', 'SummarizedExperiment', 'SingleCellExperiment', 'MAST', 'DESeq2','BiocGenerics', 'GenomicRanges', 'IRanges', 'rtracklayer', 'monocle', 'Biobase', 'limma', 'glmGamPoi', 'zellkonverter', 'DropletUtils', 'scry'))"
+#8 CACHED
+
+#9 [14/20] RUN R --no-echo --no-restore --no-save -e "install.packages('remotes',repos='http://cran.rstudio.com/')"
+#9 CACHED
+
+#10 [10/20] RUN R --no-echo --no-restore --no-save -e "install.packages('BiocManager', repos='http://cran.rstudio.com/')"
+#10 CACHED
+
+#11 [16/20] RUN R --no-echo --no-restore --no-save -e "remotes::install_github('mojaveazure/seurat-disk', repos='http://cran.rstudio.com/')"
+#11 CACHED
+
+#12 [ 6/20] RUN R -e 'install.packages("devtools", repos="http://cran.rstudio.com/")'
+#12 CACHED
+
+#13 [15/20] RUN R --no-echo --no-restore --no-save -e "install.packages('Seurat', repos='http://cran.rstudio.com/')"
+#13 CACHED
+
+#14 [ 9/20] RUN R -e 'install.packages(c("scran","RColorBrewer","ggplot2","SingleR","clusterProfiler","enrichplot","MAST","org.Hs.eg.db", "AnnotationDbi"), repos="http://cran.rstudio.com/")'
+#14 CACHED
+
+#15 [ 2/20] RUN pip install --quiet --no-cache-dir   umap-learn   scanpy   numpy   pandas   matplotlib   seaborn   gprofiler   gseapy   "mudatasets[muon]"   muon   anndata2ri   scib   scirpy   palmotif   harmonypy   decoupler   liana   altair   vega_datasets   cassiopeia   scvelo   celltypist   bbknn   pingouin && fix-permissions "/opt/conda" && fix-permissions "/home/jovyan"
+#15 CACHED
+
+#16 [ 7/20] RUN R -e 'install.packages(c("assertthat", "cpp11", "tidyselect", "vectrs", "R6", "purr", "bit64"), repos="http://cran.rstudio.com/")'
+#16 CACHED
+
+#17 [12/20] RUN R --no-echo --no-restore --no-save -e "install.packages(c('VGAM', 'R.utils', 'metap', 'Rfast2', 'ape', 'enrichR', 'mixtools'), repos='http://cran.rstudio.com/')"
+#17 CACHED
+
+#18 [ 8/20] RUN R -e 'install.packages("arrow", repos="http://cran.rstudio.com/")'
+#18 CACHED
+
+#19 [17/20] RUN R --no-echo --no-restore --no-save -e "BiocManager::install('TOAST')"
+#19 CACHED
+
+#20 [ 4/20] RUN apt-get install -y     libhdf5-dev     libcurl4-openssl-dev     libssl-dev     libpng-dev     libboost-all-dev     libxml2-dev     openjdk-8-jdk     wget     git     libfftw3-dev     libgsl-dev     libgeos-dev     libfontconfig1-dev     libharfbuzz-dev     libfribidi-dev     libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
+#20 CACHED
+
+#21 [18/20] RUN R --no-echo --no-restore --no-save -e "devtools::install_github('xuranw/MuSiC', repos='http://cran.rstudio.com/')"
+#21 CACHED
+
+#22 [19/20] RUN R --no-echo --no-restore --no-save -e "BiocManager::install(c('OmnipathR','saezlab/decoupleR'))"
+#22 3.138 Bioconductor version 3.16 (BiocManager 1.30.20), R 4.2.2 (2022-10-31)
+#22 3.139 Installing package(s) 'OmnipathR'
+#22 3.794 also installing the dependencies ‘checkmate’, ‘logger’
+#22 3.794 
+#22 3.795 trying URL 'https://cloud.r-project.org/src/contrib/checkmate_2.1.0.tar.gz'
+#22 4.040 Content type 'application/x-gzip' length 170034 bytes (166 KB)
+#22 4.040 ==================================================
+#22 4.064 downloaded 166 KB
+#22 4.064 
+#22 4.067 trying URL 'https://cloud.r-project.org/src/contrib/logger_0.2.2.tar.gz'
+#22 4.284 Content type 'application/x-gzip' length 656632 bytes (641 KB)
+#22 4.284 ==================================================
+#22 4.335 downloaded 641 KB
+#22 4.335 
+#22 4.342 trying URL 'https://bioconductor.org/packages/3.16/bioc/src/contrib/OmnipathR_3.5.25.tar.gz'
+#22 4.544 Content type 'application/x-gzip' length 3453787 bytes (3.3 MB)
+#22 4.561 ==================================================
+#22 4.813 downloaded 3.3 MB
+#22 4.813 
+#22 5.202 * installing *source* package ‘checkmate’ ...
+#22 5.209 ** package ‘checkmate’ successfully unpacked and MD5 sums checked
+#22 5.209 ** using staged installation
+#22 5.222 ** libs
+#22 5.226 x86_64-conda-linux-gnu-cc -I"/opt/conda/lib/R/include" -DNDEBUG   -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /opt/conda/include -I/opt/conda/include -Wl,-rpath-link,/opt/conda/lib   -fpic  -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /opt/conda/include -fdebug-prefix-map=/home/conda/feedstock_root/build_artifacts/r-base-split_1671440533574/work=/usr/local/src/conda/r-base-4.2.2 -fdebug-prefix-map=/opt/conda=/usr/local/src/conda-prefix  -c all_missing.c -o all_missing.o
+#22 5.303 x86_64-conda-linux-gnu-cc -I"/opt/conda/lib/R/include" -DNDEBUG   -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /opt/conda/include -I/opt/conda/include -Wl,-rpath-link,/opt/conda/lib   -fpic  -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /opt/conda/include -fdebug-prefix-map=/home/conda/feedstock_root/build_artifacts/r-base-split_1671440533574/work=/usr/local/src/conda/r-base-4.2.2 -fdebug-prefix-map=/opt/conda=/usr/local/src/conda-prefix  -c any_infinite.c -o any_infinite.o
+#22 5.346 x86_64-conda-linux-gnu-cc -I"/opt/conda/lib/R/include" -DNDEBUG   -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /opt/conda/include -I/opt/conda/include -Wl,-rpath-link,/opt/conda/lib   -fpic  -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /opt/conda/include -fdebug-prefix-map=/home/conda/feedstock_root/build_artifacts/r-base-split_1671440533574/work=/usr/local/src/conda/r-base-4.2.2 -fdebug-prefix-map=/opt/conda=/usr/local/src/conda-prefix  -c any_missing.c -o any_missing.o
+#22 5.430 x86_64-conda-linux-gnu-cc -I"/opt/conda/lib/R/include" -DNDEBUG   -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /opt/conda/include -I/opt/conda/include -Wl,-rpath-link,/opt/conda/lib   -fpic  -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /opt/conda/include -fdebug-prefix-map=/home/conda/feedstock_root/build_artifacts/r-base-split_1671440533574/work=/usr/local/src/conda/r-base-4.2.2 -fdebug-prefix-map=/opt/conda=/usr/local/src/conda-prefix  -c any_nan.c -o any_nan.o
+#22 5.472 x86_64-conda-linux-gnu-cc -I"/opt/conda/lib/R/include" -DNDEBUG   -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /opt/conda/include -I/opt/conda/include -Wl,-rpath-link,/opt/conda/lib   -fpic  -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /opt/conda/include -fdebug-prefix-map=/home/conda/feedstock_root/build_artifacts/r-base-split_1671440533574/work=/usr/local/src/conda/r-base-4.2.2 -fdebug-prefix-map=/opt/conda=/usr/local/src/conda-prefix  -c checks.c -o checks.o
+#22 5.865 x86_64-conda-linux-gnu-cc -I"/opt/conda/lib/R/include" -DNDEBUG   -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /opt/conda/include -I/opt/conda/include -Wl,-rpath-link,/opt/conda/lib   -fpic  -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /opt/conda/include -fdebug-prefix-map=/home/conda/feedstock_root/build_artifacts/r-base-split_1671440533574/work=/usr/local/src/conda/r-base-4.2.2 -fdebug-prefix-map=/opt/conda=/usr/local/src/conda-prefix  -c find_nchar.c -o find_nchar.o
+#22 5.913 x86_64-conda-linux-gnu-cc -I"/opt/conda/lib/R/include" -DNDEBUG   -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /opt/conda/include -I/opt/conda/include -Wl,-rpath-link,/opt/conda/lib   -fpic  -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /opt/conda/include -fdebug-prefix-map=/home/conda/feedstock_root/build_artifacts/r-base-split_1671440533574/work=/usr/local/src/conda/r-base-4.2.2 -fdebug-prefix-map=/opt/conda=/usr/local/src/conda-prefix  -c guess_type.c -o guess_type.o
+#22 5.964 x86_64-conda-linux-gnu-cc -I"/opt/conda/lib/R/include" -DNDEBUG   -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /opt/conda/include -I/opt/conda/include -Wl,-rpath-link,/opt/conda/lib   -fpic  -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /opt/conda/include -fdebug-prefix-map=/home/conda/feedstock_root/build_artifacts/r-base-split_1671440533574/work=/usr/local/src/conda/r-base-4.2.2 -fdebug-prefix-map=/opt/conda=/usr/local/src/conda-prefix  -c helper.c -o helper.o
+#22 6.046 x86_64-conda-linux-gnu-cc -I"/opt/conda/lib/R/include" -DNDEBUG   -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /opt/conda/include -I/opt/conda/include -Wl,-rpath-link,/opt/conda/lib   -fpic  -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /opt/conda/include -fdebug-prefix-map=/home/conda/feedstock_root/build_artifacts/r-base-split_1671440533574/work=/usr/local/src/conda/r-base-4.2.2 -fdebug-prefix-map=/opt/conda=/usr/local/src/conda-prefix  -c init.c -o init.o
+#22 6.084 x86_64-conda-linux-gnu-cc -I"/opt/conda/lib/R/include" -DNDEBUG   -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /opt/conda/include -I/opt/conda/include -Wl,-rpath-link,/opt/conda/lib   -fpic  -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /opt/conda/include -fdebug-prefix-map=/home/conda/feedstock_root/build_artifacts/r-base-split_1671440533574/work=/usr/local/src/conda/r-base-4.2.2 -fdebug-prefix-map=/opt/conda=/usr/local/src/conda-prefix  -c integerish.c -o integerish.o
+#22 6.139 x86_64-conda-linux-gnu-cc -I"/opt/conda/lib/R/include" -DNDEBUG   -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /opt/conda/include -I/opt/conda/include -Wl,-rpath-link,/opt/conda/lib   -fpic  -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /opt/conda/include -fdebug-prefix-map=/home/conda/feedstock_root/build_artifacts/r-base-split_1671440533574/work=/usr/local/src/conda/r-base-4.2.2 -fdebug-prefix-map=/opt/conda=/usr/local/src/conda-prefix  -c is_sorted.c -o is_sorted.o
+#22 6.192 x86_64-conda-linux-gnu-cc -I"/opt/conda/lib/R/include" -DNDEBUG   -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /opt/conda/include -I/opt/conda/include -Wl,-rpath-link,/opt/conda/lib   -fpic  -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /opt/conda/include -fdebug-prefix-map=/home/conda/feedstock_root/build_artifacts/r-base-split_1671440533574/work=/usr/local/src/conda/r-base-4.2.2 -fdebug-prefix-map=/opt/conda=/usr/local/src/conda-prefix  -c qassert.c -o qassert.o
+#22 6.409 x86_64-conda-linux-gnu-cc -I"/opt/conda/lib/R/include" -DNDEBUG   -DNDEBUG -D_FORTIFY_SOURCE=2 -O2 -isystem /opt/conda/include -I/opt/conda/include -Wl,-rpath-link,/opt/conda/lib   -fpic  -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem /opt/conda/include -fdebug-prefix-map=/home/conda/feedstock_root/build_artifacts/r-base-split_1671440533574/work=/usr/local/src/conda/r-base-4.2.2 -fdebug-prefix-map=/opt/conda=/usr/local/src/conda-prefix  -c which_first.c -o which_first.o
+#22 6.467 x86_64-conda-linux-gnu-cc -shared -L/opt/conda/lib/R/lib -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,--allow-shlib-undefined -Wl,-rpath,/opt/conda/lib -Wl,-rpath-link,/opt/conda/lib -L/opt/conda/lib -o checkmate.so all_missing.o any_infinite.o any_missing.o any_nan.o checks.o find_nchar.o guess_type.o helper.o init.o integerish.o is_sorted.o qassert.o which_first.o -L/opt/conda/lib/R/lib -lR
+#22 6.499 installing to /opt/conda/lib/R/library/00LOCK-checkmate/00new/checkmate/libs
+#22 6.501 ** R
+#22 6.521 ** inst
+#22 6.524 ** byte-compile and prepare package for lazy loading
+#22 8.165 ** help
+#22 8.525 *** installing help indices
+#22 8.649 ** building package indices
+#22 9.000 ** installing vignettes
+#22 9.009 ** testing if installed package can be loaded from temporary location
+#22 9.239 ** checking absolute paths in shared objects and dynamic libraries
+#22 9.248 ** testing if installed package can be loaded from final location
+#22 9.525 ** testing if installed package keeps a record of temporary installation path
+#22 9.527 * DONE (checkmate)
+#22 10.02 * installing *source* package ‘logger’ ...
+#22 10.02 ** package ‘logger’ successfully unpacked and MD5 sums checked
+#22 10.02 ** using staged installation
+#22 10.04 ** R
+#22 10.04 ** demo
+#22 10.04 ** inst
+#22 10.05 ** byte-compile and prepare package for lazy loading
+#22 10.65 ** help
+#22 10.77 *** installing help indices
+#22 10.85 *** copying figures
+#22 10.85 ** building package indices
+#22 11.21 ** installing vignettes
+#22 11.22 ** testing if installed package can be loaded from temporary location
+#22 11.53 ** testing if installed package can be loaded from final location
+#22 11.87 ** testing if installed package keeps a record of temporary installation path
+#22 11.87 * DONE (logger)
+#22 12.62 * installing *source* package ‘OmnipathR’ ...
+#22 12.62 ** using staged installation
+#22 12.64 ** R
+#22 12.70 ** inst
+#22 12.71 ** byte-compile and prepare package for lazy loading
+#22 16.64 ** help
+#22 17.01 *** installing help indices
+#22 17.27 ** building package indices
+#22 17.72 ** installing vignettes
+#22 17.73 ** testing if installed package can be loaded from temporary location
+#22 18.83 ** testing if installed package can be loaded from final location
+#22 20.39 ** testing if installed package keeps a record of temporary installation path
+#22 20.40 * DONE (OmnipathR)
+#22 20.42 
+#22 20.42 The downloaded source packages are in
+#22 20.42 	‘/tmp/RtmpKSMoCg/downloaded_packages’
+#22 20.43 Updating HTML index of packages in '.Library'
+#22 20.43 Making 'packages.html' ... done
+#22 20.59 Installing github package(s) 'saezlab/decoupleR'
+#22 20.97 Downloading GitHub repo saezlab/decoupleR@HEAD
+#22 23.58 
+#22 23.82 ── R CMD build ─────────────────────────────────────────────────────────────────
+#22 24.06 * checking for file ‘/tmp/RtmpKSMoCg/remotes1333f9d22/saezlab-decoupleR-c4a001d/DESCRIPTION’ ... OK
+#22 24.07 * preparing ‘decoupleR’:
+#22 24.07 * checking DESCRIPTION meta-information ... OK
+#22 24.15 * checking for LF line-endings in source and make files and shell scripts
+#22 24.15 * checking for empty or unneeded directories
+#22 24.15 Omitted ‘LazyData’ from DESCRIPTION
+#22 24.16 * building ‘decoupleR_2.3.3.tar.gz’
+#22 24.33 
+#22 24.73 * installing *source* package ‘decoupleR’ ...
+#22 24.73 ** using staged installation
+#22 24.75 ** R
+#22 24.77 ** inst
+#22 24.78 ** byte-compile and prepare package for lazy loading
+#22 27.12 ** help
+#22 27.26 *** installing help indices
+#22 27.35 *** copying figures
+#22 27.35 ** building package indices
+#22 27.72 ** installing vignettes
+#22 27.73 ** testing if installed package can be loaded from temporary location
+#22 30.61 ** testing if installed package can be loaded from final location
+#22 33.41 ** testing if installed package keeps a record of temporary installation path
+#22 33.41 * DONE (decoupleR)
+#22 35.65 Old packages: 'curl', 'decoupleR', 'RSQLite'
+#22 DONE 35.7s
+
+#23 [20/20] RUN fix-permissions "/opt/conda" &&   fix-permissions "/home/jovyan"
+#23 DONE 2.4s
+
+#24 exporting to image
+#24 exporting layers
+#24 exporting layers 0.3s done
+#24 writing image sha256:67bb86cd58b1f2ee93c8dfb9f35ad804b6ca8fecf66b81368311fc73d3826120 done
+#24 naming to docker.io/dsouzd04/himc_rpy2_singlecell:3.0 done
+#24 DONE 0.3s

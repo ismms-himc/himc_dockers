@@ -1,0 +1,6 @@
+Sys.setenv(HOME='/home/docker')
+.libPaths('/home/docker/R-packages/')
+library(zellkonverter)
+example_h5ad <- system.file("extdata", "krumsiek11.h5ad", package = "zellkonverter")
+readH5AD(example_h5ad)
+readH5AD('../reference/single_cell_references/TabulaMurisSapiens/Germ_Line/TS_germ_line.h5ad')
